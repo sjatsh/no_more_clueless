@@ -17,24 +17,25 @@ Mozilla Firefox 使用profile文件夹来保存用户设置。但是遇到计算
      * 备份这个文件夹（**这很重要**），所有没有做这一步最后失败了全是耍流氓！
      * 打开`profiles.ini`，把`Path=`后面那个文件夹把当前文件夹拷一份在同步文件夹里，命名为`default`
      * 修改文件`profiles.ini`,如果你也把D:\SkyDrive设为了同步文件夹，那么就改成这样的：
-```
-[General]
-StartWithLastProfile=1
-
-[Profile0]
-Name=default
-IsRelative=0
-Path=D:\SkyDrive\default
-Default=1
-
-```
+        ```
+        [General]
+        StartWithLastProfile=1
+    
+        [Profile0]
+        Name=default
+        IsRelative=0
+        Path=D:\SkyDrive\default
+        Default=1
+        
+        ```
      * 打开Firefox，看看你的书签、附加组件什么的还在不在。如果还在，就好。不在了？还没有备份？…… 
      * 在地址栏中输入`about:config`。
      * 新建几个值：
-| 编号 |  类型 |                    变量名称                   |          值         |
-|:--:|:---:|:-----------------------------------------:|:------------------:|
-|  1 | 字符串 |    browser.cache.disk.parent_directory    | C:\Mozilla\Firefox |
-|  2 | 字符串 |   browser.cache.offline.parent_directory  | C:\Mozilla\Firefox |
-|  3 | 布尔值 | browser.pagethumbnails.capturing_disabled |        true        |
+     
+    | 编号 |  类型 |                    变量名称                   |          值         |
+    |:--:|:---:|:-----------------------------------------:|:------------------:|
+    |  1 | 字符串 |    browser.cache.disk.parent_directory    | C:\Mozilla\Firefox |
+    |  2 | 字符串 |   browser.cache.offline.parent_directory  | C:\Mozilla\Firefox |
+    |  3 | 布尔值 | browser.pagethumbnails.capturing_disabled |        true        |
 
 这几个值的作用，是为了防止Firefox运行中在同步文件夹里写来写去，Skydrive就不停的同步，没有尽头。
